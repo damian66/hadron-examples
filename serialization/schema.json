@@ -1,0 +1,8 @@
+{
+  "name": "User",
+  "properties": [
+    { "name": "firstName", "type": "string" },
+    { "name": "lastName", "type": "string", "groups": ["mod", "admin"] },
+    { "name": "email", "type": "string", "groups": ["admin"] }
+  ]
+}
