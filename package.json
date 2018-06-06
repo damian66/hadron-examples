@@ -6,6 +6,8 @@
   "scripts": {
     "start:hello-world": "babel-node hello-world/",
     "start:serialization": "babel-node serialization/",
+    "dev:hello-world": "nodemon --exec npm run start:hello-world",
+    "dev:serialization": "nodemon --exec npm run start:serialization",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -19,6 +21,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-3": "^6.24.1"
+    "babel-preset-stage-3": "^6.24.1",
+    "nodemon": "^1.17.5"
   }
 }
