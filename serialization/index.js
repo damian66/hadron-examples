@@ -10,21 +10,23 @@ import schema from './schema.json';
 const app = new express();
 const port = process.env.PORT || 3000;
 
+const routeCallback = (serializer, group) =>
+  Promise.all(
+    data.map(user => serializer.serialize(user, [group], 'User'))
+  ).then(users => ({
+    count: data.length,
+    data: users
+  }));
+
 hadron(
   app,
   [hadronExpress, hadronSerialization],
   {
     routes: {
-      helloWorld: {
-        path: '/:group',
+      routeWithGroup: {
+        path: '/:group?',
         methods: ['GET'],
-        callback: (serializer, group) =>
-          Promise.all(
-            data.map(user => serializer.serialize(user, ['mod'], 'User'))
-          ).then(users => ({
-            count: data.length,
-            data: users
-          })),
+        callback: routeCallback,
       }
     },
     serializer: {
