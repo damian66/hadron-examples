@@ -5,7 +5,7 @@ const hadronExpress = require('@brainhubeu/hadron-express');
 const hadronSerialization = require('@brainhubeu/hadron-serialization');
 
 import data from './data.json';
-import schema from './schema.json';
+import UserSchema from './schemas/User.json';
 
 const app = new express();
 const port = process.env.PORT || 3000;
@@ -30,7 +30,7 @@ hadron(
       }
     },
     serializer: {
-      schemas: [ schema ],
+      schemas: [UserSchema],
     }
   }
 ).then(container => {
