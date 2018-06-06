@@ -18,6 +18,9 @@ npm run start:hello-world
 
 # Hadron-serialization package
 npm run start:serialization
+
+# Hadron-events package
+npm run start:events
 ```
 
 #### Development
@@ -28,4 +31,7 @@ npm run dev:hello-world
 
 # Hadron-serialization package
 npm run dev:serialization
+
+# Hadron-events package
+npm run dev:events
 ```
