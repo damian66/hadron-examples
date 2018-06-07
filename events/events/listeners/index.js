@@ -8,4 +8,18 @@ export default [
       console.log(rest);
     }
   },
+  {
+    name: 'Success',
+    event: 'successEvent',
+    handler: (key, ...rest) => {
+      console.log(`You have successfully provided value of ${key}`);
+    }
+  },
+  {
+    name: 'Fail',
+    event: 'failEvent',
+    handler: (key, ...rest) => {
+      console.log(`You have successfully provided value of ${key}`);
+    }
+  },
 ];
