@@ -18,13 +18,13 @@ hadron(
       customEventRoute: {
         path: '/:key?',
         methods: ['GET'],
-        callback: (request, container) => {
+        callback: (request, { eventManager }) => {
           const { params: { key } } = request;
           const eventToEmit = (key === 'foo' && 'successEvent') || 'failEvent';
-          container.eventManager.emitEvent({ event: 'handleRequestCallbackEvent' });
-          return { 
+          eventManager.emitEvent(eventToEmit)(key);
+          return {
             body: {
-              "key": key || null,
+              "key": key || '',
               "eventEmitted": eventToEmit,
             },
           };

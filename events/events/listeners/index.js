@@ -3,7 +3,8 @@ export default [
     name: 'Test',
     event: 'handleRequestCallbackEvent',
     handler: (request, ...rest) => {
-      console.log('handleRequestCallbackEvent', request);
+      const { headers } = request;
+      console.log('handleRequestCallbackEvent', headers);
       console.log('#####');
       console.log(rest);
     }
